@@ -189,6 +189,7 @@ button.submit:active {
 	$(function () {
 		function submitForm() {
 		var s = document.getElementById('form1');
+		console.log(s.val());
 		window.webkit.messageHandlers.formHandler.postMessage(s);
 	} });
 </script>
