@@ -185,11 +185,12 @@ button.submit:active {
         </li>
     </ul>
 </form>
-<script>	
-function submitForm() {
-	var s = document.getElementById('form1');
-	window.webkit.messageHandlers.formHandler.postMessage(s);
-}
+<script type="text/javascript">
+	$(function () {
+		function submitForm() {
+		var s = document.getElementById('form1');
+		window.webkit.messageHandlers.formHandler.postMessage(s);
+	} });
 </script>
 </body>
 </html>
