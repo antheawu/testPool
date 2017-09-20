@@ -156,6 +156,14 @@ button.submit:active {
 }
 </style>
 <body>
+<script type="text/javascript">
+	function submitForm() {
+	   var s = document.getElementById('form1');
+	   console.log(s.val());
+	   window.webkit.messageHandlers.formHandler.postMessage(s);
+	}
+</script>
+	
 <form class="contact_form" action="#" method="post" name="contact_form">
     <ul>
         <li>
@@ -185,12 +193,6 @@ button.submit:active {
         </li>
     </ul>
 </form>
-<script type="text/javascript">
-	function submitForm() {
-	   var s = document.getElementById('form1');
-	   console.log(s.val());
-	   window.webkit.messageHandlers.formHandler.postMessage(s);
-	}
-</script>
+
 </body>
 </html>
