@@ -181,9 +181,14 @@ button.submit:active {
             <textarea name="message" cols="40" rows="6" required ></textarea>
         </li>
         <li>
-        	<button class="submit" type="submit">Submit Form</button>
+        	<button class="submit" type="submit" onclick="submitForm()">Submit Form</button>
         </li>
     </ul>
 </form>
+	
+function submitForm() {
+	var s = document.getElementById('form1');
+	window.webkit.messageHandlers.formHandler.postMessage(s);
+}
 </body>
 </html>
