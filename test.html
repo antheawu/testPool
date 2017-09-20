@@ -164,7 +164,8 @@ button.submit:active {
    	   s['url'] = document.getElementById('url').value;
    	   s['message'] = document.getElementById('message').value;
    	   console.log(s);
-	   window.webkit.messageHandlers.formHandler.postMessage(s);
+	   if (typeof(window.webkit) !='undefined')
+	   	window.webkit.messageHandlers.formHandler.postMessage(s);
 	}
 </script>
 	
