@@ -186,12 +186,11 @@ button.submit:active {
     </ul>
 </form>
 <script type="text/javascript">
-	$(function () {
-		function submitForm() {
-		var s = document.getElementById('form1');
-		console.log(s.val());
-		window.webkit.messageHandlers.formHandler.postMessage(s);
-	} });
+	function submitForm() {
+	   var s = document.getElementById('form1');
+	   console.log(s.val());
+	   window.webkit.messageHandlers.formHandler.postMessage(s);
+	}
 </script>
 </body>
 </html>
