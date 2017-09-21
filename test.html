@@ -157,9 +157,10 @@ button.submit:active {
 </style>
 <body>
 <script type="text/javascript">
-var button = document.getElementById("formSend");
-button.addEventListener("click", function() {
-    var s = {}//document.getElementById('contact_form');
+$(document).ready(function(){
+	var button = document.getElementById('formSend');
+	button.addEventListener("click", function() {
+	var s = {}//document.getElementById('contact_form');
 	   s['id'] = document.getElementById('name').value;
 	   s['email'] = document.getElementById('email').value;	   
    	   s['url'] = document.getElementById('url').value;
@@ -167,7 +168,9 @@ button.addEventListener("click", function() {
    	   console.log(s);
 	   if (typeof(window.webkit) !='undefined')
 	   	window.webkit.messageHandlers.formHandler.postMessage(s);
-},false);
+	},false);
+});
+
 	
 </script>
 	
