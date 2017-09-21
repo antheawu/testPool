@@ -186,7 +186,9 @@ button.submit:active {
 </form>
 	
 <button id="formSend" class="submit">Submit Form</button>
-	
+<hr>
+<div id="result"></div>
+<hr>
 <script type="text/javascript">
 var button = document.getElementById('formSend');
 button.addEventListener("click", function() {
@@ -201,10 +203,10 @@ var s = {}
 	return s;
 });
 	
-function testEvealuation() {
-   var button = document.getElementById('formSend');
-   console.log(button);
-   return button;
+function testEvealuation(data) {
+   var res = document.getElementById('result');
+   console.log(data);
+   res.innerHTML += data;
 }
 	
 </script>
