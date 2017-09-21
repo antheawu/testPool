@@ -157,8 +157,9 @@ button.submit:active {
 </style>
 <body>
 <script type="text/javascript">
-	function submitForm() {
-	   var s = {}//document.getElementById('contact_form');
+var button = document.getElementById("formSend");
+button.addEventListener("click", function() {
+    var s = {}//document.getElementById('contact_form');
 	   s['id'] = document.getElementById('name').value;
 	   s['email'] = document.getElementById('email').value;	   
    	   s['url'] = document.getElementById('url').value;
@@ -166,7 +167,8 @@ button.submit:active {
    	   console.log(s);
 	   if (typeof(window.webkit) !='undefined')
 	   	window.webkit.messageHandlers.formHandler.postMessage(s);
-	}
+},false);
+	
 </script>
 	
 <form class="contact_form" action="#" method="post" id="contact_form">
@@ -194,7 +196,7 @@ button.submit:active {
             <textarea id="message" name="message" cols="40" rows="6" required ></textarea>
         </li>
         <li>
-        	<button class="submit" onclick="submitForm()">Submit Form</button>
+        	<button id="formSend" class="submit">Submit Form</button>
         </li>
     </ul>
 </form>
