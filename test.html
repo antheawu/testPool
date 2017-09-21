@@ -156,23 +156,7 @@ button.submit:active {
 }
 </style>
 <body>
-<script type="text/javascript">
-$(document).ready(function(){
-	var button = document.getElementById('formSend');
-	button.addEventListener("click", function() {
-	var s = {}//document.getElementById('contact_form');
-	   s['id'] = document.getElementById('name').value;
-	   s['email'] = document.getElementById('email').value;	   
-   	   s['url'] = document.getElementById('url').value;
-   	   s['message'] = document.getElementById('message').value;
-   	   console.log(s);
-	   if (typeof(window.webkit) !='undefined')
-	   	window.webkit.messageHandlers.formHandler.postMessage(s);
-	},false);
-});
 
-	
-</script>
 	
 <form class="contact_form" action="#" method="post" id="contact_form">
     <ul>
@@ -204,5 +188,18 @@ $(document).ready(function(){
     </ul>
 </form>
 
+<script type="text/javascript">
+var button = document.getElementById('formSend');
+button.addEventListener("click", function() {
+var s = {}
+	s['id'] = document.getElementById('name').value;
+	s['email'] = document.getElementById('email').value;	   
+   	s['url'] = document.getElementById('url').value;
+   	s['message'] = document.getElementById('message').value;
+   	console.log(s);
+	if (typeof(window.webkit) !='undefined')
+		window.webkit.messageHandlers.formHandler.postMessage(s);
+},false);
+</script>
 </body>
 </html>
