@@ -182,12 +182,11 @@ button.submit:active {
             <label for="message">Message:</label>
             <textarea id="message" name="message" cols="40" rows="6" required ></textarea>
         </li>
-        <li>
-        	<button id="formSend" class="submit">Submit Form</button>
-        </li>
     </ul>
 </form>
-
+	
+<button id="formSend" class="submit">Submit Form</button>
+	
 <script type="text/javascript">
 var button = document.getElementById('formSend');
 button.addEventListener("click", function() {
@@ -197,8 +196,8 @@ var s = {}
    	s['url'] = document.getElementById('url').value;
    	s['message'] = document.getElementById('message').value;
    	console.log(s);
-	//if (typeof(window.webkit) !='undefined')
-	//	window.webkit.messageHandlers.formHandler.postMessage(s);
+	if (typeof(window.webkit) !='undefined')
+		window.webkit.messageHandlers.formHandler.postMessage(s);
 	return s;
 });
 	
