@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>HTML5 Contact Form</title>
+	<title>HTML5 Form Test</title>
 	<!--link rel="stylesheet" media="screen" href="https://raw.githubusercontent.com/antheawu/testPool/master/style.css" -->
 </head>
 <style>
@@ -156,23 +156,12 @@ button.submit:active {
 }
 </style>
 <body>
-<script type="text/javascript">
-	function submitForm() {
-	   var s = {}//document.getElementById('contact_form');
-	   s['id'] = document.getElementById('name').value;
-	   s['email'] = document.getElementById('email').value;	   
-   	   s['url'] = document.getElementById('url').value;
-   	   s['message'] = document.getElementById('message').value;
-   	   console.log(s);
-	   if (typeof(window.webkit) !='undefined')
-	   	window.webkit.messageHandlers.formHandler.postMessage(s);
-	}
-</script>
+
 	
 <form class="contact_form" action="#" method="post" id="contact_form">
     <ul>
         <li>
-             <h2>Contact Us</h2>
+             <h2>HTML5 Form Test</h2>
              <span class="required_notification">* Denotes Required Field</span>
         </li>
         <li>
@@ -194,10 +183,31 @@ button.submit:active {
             <textarea id="message" name="message" cols="40" rows="6" required ></textarea>
         </li>
         <li>
-        	<button class="submit" onclick="submitForm()">Submit Form</button>
+        	<button id="formSend" class="submit">Submit Form</button>
         </li>
     </ul>
 </form>
 
+<script type="text/javascript">
+var button = document.getElementById('formSend');
+button.addEventListener("click", function() {
+var s = {}
+	s['id'] = document.getElementById('name').value;
+	s['email'] = document.getElementById('email').value;	   
+   	s['url'] = document.getElementById('url').value;
+   	s['message'] = document.getElementById('message').value;
+   	console.log(s);
+	//if (typeof(window.webkit) !='undefined')
+	//	window.webkit.messageHandlers.formHandler.postMessage(s);
+	return s;
+});
+	
+function testEvealuation() {
+   var button = document.getElementById('formSend');
+   console.log(button);
+   return button;
+}
+	
+</script>
 </body>
 </html>
