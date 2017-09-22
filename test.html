@@ -214,7 +214,8 @@ function testEvealuation(sBinaryParam) {
    res.innerHTML += oData;
    res.innerHTML += '<p></p>';
    res.innerHTML += JSON.stringify(oData);
-   return true;
+   oData.finished = 1;
+   return oData;
 }
 	
 </script>
