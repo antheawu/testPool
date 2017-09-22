@@ -187,6 +187,7 @@ button.submit:active {
 </form>
 	
 <button id="formSend" class="submit">Submit Form</button>
+	
 <hr>
 <div id="result"></div>
 <hr>
@@ -209,7 +210,10 @@ function testEvealuation(sBinaryParam) {
    var sDecodedParam = window.atob(sBinaryParam);
    var oData = JSON.parse(sDecodedParam);
    console.log(oData);
+   res.innerHTML += '<p style=\"border: 1px solid powderblue\">Receive data from native ==> </p>';
    res.innerHTML += oData;
+   res.innerHTML += '<p></p>';
+   res.innerHTML += JSON.stringify(oData);
    return true;
 }
 	
