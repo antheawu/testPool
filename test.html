@@ -204,10 +204,13 @@ var s = {}
 	return s;
 });
 	
-function testEvealuation(data) {
+function testEvealuation(sBinaryParam) {
    var res = document.getElementById('result');
-   console.log(data);
-   res.innerHTML += data;
+   var sDecodedParam = window.atob(sBinaryParam);
+   var oData = JSON.parse(sDecodedParam);
+   console.log(oData);
+   res.innerHTML += oData;
+   return true;
 }
 	
 </script>
