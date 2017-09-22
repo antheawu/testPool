@@ -215,6 +215,9 @@ function testEvealuation(sBinaryParam) {
    res.innerHTML += '<p style=\"border: 1px solid powderblue\">Convert JSON object to string: </p>';
    res.innerHTML += JSON.stringify(oData);
    oData.finished = 1;
+    var d = new Date();
+    var n = d.getTime();
+   oData.finishedtime = n;
    return oData;
 }
 	
