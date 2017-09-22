@@ -210,9 +210,9 @@ function testEvealuation(sBinaryParam) {
    var sDecodedParam = window.atob(sBinaryParam);
    var oData = JSON.parse(sDecodedParam);
    console.log(oData);
-   res.innerHTML += '<p style=\"border: 1px solid powderblue\">Receive data from native ==> </p>';
+   res.innerHTML += '<p style=\"border: 1px solid powderblue\">Receive JSON object from swift: </p>';
    res.innerHTML += oData;
-   res.innerHTML += '<p></p>';
+   res.innerHTML += '<p style=\"border: 1px solid powderblue\">Convert JSON object to string: </p>';
    res.innerHTML += JSON.stringify(oData);
    oData.finished = 1;
    return oData;
