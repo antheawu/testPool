@@ -23,38 +23,23 @@
             margin-top: 2em;
         }
     </style>
-    <script type="text/javascript">
-        $(function () {
-            var headline = $("#headline");
-            var selection = $("#selector");
-            function set_headline (text) {
-                headline.text(text);
-            }
-
-            function call_native () {
-                var prop = selection.val();
-               set_headline("asked for " + prop + "..."); window.webkit.messageHandlers.observe.postMessage(prop);
-            }
-
-            setTimeout(call_native, 1000);
-
-            selection.on("change", call_native);
-
-            // Expose that function globally
-            window.call_native = call_native;
-            window.set_headline = set_headline;
-        });
-    </script>
-</head>
+    </head>
 <body>
-    <h2 id="headline">loading...</h2>
-    <select id="selector">
-        <option value="systemVersion" selected>iOS Version</option>
-        <option value="systemName">System Name</option>
-        <option value="name">Device Name</option>
-        <option value="model">Device Model</option>
-        <option value="userInterfaceIdiom">User Interface</option>
-        <option value="identifierForVendor">Vendor ID</option>
-    </select>
+    
+    <button id="formSend" class="submit">Close WebView</button>
+	
+
+<script type="text/javascript">
+var button = document.getElementById('formSend');
+button.addEventListener("click", function() {
+ 
+	if (typeof(window.webkit) !='undefined'){
+        var s = [];
+		window.webkit.messageHandlers.formHandler.postMessage(s);
+		document.getElementById('contact_form').reset();
+	}
+	
+});
+    </script>
 </body>
 </html>
