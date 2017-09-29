@@ -38,7 +38,7 @@ var button = document.getElementById('formSend');
 button.addEventListener("click", function() {
  
 	if (typeof(window.webkit) !='undefined'){
-		window.webkit.messageHandlers.closeWebView.postMessage();
+		window.webkit.messageHandlers.closeWebView.postMessage([]);
 	}
 	
 });
