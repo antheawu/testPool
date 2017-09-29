@@ -187,7 +187,19 @@ button.submit:active {
 </form>
 	
 <button id="formSend" class="submit">Submit Form</button>
-	
+<br /><br />	
+<button id="close" class="submit">Close WebView</button>
+    <script type="text/javascript">
+    var button1 = document.getElementById('close');
+    button1.addEventListener("click", function() {
+    
+    if (typeof(window.webkit) !='undefined'){
+    window.webkit.messageHandlers.closeWebView.postMessage([]);
+    }
+    
+    });
+    </script>
+
 <hr>
 <div id="result"></div>
 <hr>
