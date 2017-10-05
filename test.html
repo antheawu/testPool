@@ -159,7 +159,8 @@ button.submit:active {
 <body>
 
 <script type="text/javascript">		
-  document.write("<h2>" + getUserToken() + "</h2>");
+  var theUserToken;
+  function setUserToken(token) { theUserToken = token;}
 </script>
 <form class="contact_form" action="#" method="post" id="contact_form">
     <ul>
