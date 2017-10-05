@@ -5,6 +5,10 @@
 	<!--meta name="viewport" content="width=343, shrink-to-fit=YES"-->
 	<title>Form Test</title>
 	<meta name="viewport" content="width=device-width, shrink-to-fit=YES"/>
+	<script type="text/javascript">
+ 	  var theUserToken;
+	  function setUserToken(token) { theUserToken = token;}
+	</script>
 	<!--link rel="stylesheet" media="screen" href="https://raw.githubusercontent.com/antheawu/testPool/master/style.css" -->
 </head>
 <style>
@@ -158,10 +162,6 @@ button.submit:active {
 </style>
 <body>
 
-<script type="text/javascript">		
-  var theUserToken;
-  function setUserToken(token) { theUserToken = token;}
-</script>
 <form class="contact_form" action="#" method="post" id="contact_form">
     <ul>
         <li>
@@ -206,7 +206,7 @@ button.submit:active {
 <hr>
 <div id="result"></div>
 <hr>
-<script type="text/javascript">
+<script type="text/javascript">	
 document.getElementById('name').value= theUserToken;	
 var button = document.getElementById('formSend');
 button.addEventListener("click", function() {
