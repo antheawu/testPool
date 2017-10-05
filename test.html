@@ -8,6 +8,7 @@
 	<script type="text/javascript">
  	  var theUserToken;
 	  function setUserToken(token) { theUserToken = token;}
+	  function getUserToken() {return theUserToken;}
 	</script>
 	<!--link rel="stylesheet" media="screen" href="https://raw.githubusercontent.com/antheawu/testPool/master/style.css" -->
 </head>
@@ -207,7 +208,7 @@ button.submit:active {
 <div id="result"></div>
 <hr>
 <script type="text/javascript">	
-document.getElementById('name').value= theUserToken;	
+document.getElementById('name').value= getUserToken();	
 var button = document.getElementById('formSend');
 button.addEventListener("click", function() {
 var s = {}
